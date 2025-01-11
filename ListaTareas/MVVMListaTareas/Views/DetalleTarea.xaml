@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaTareas.MVVMListaTareas.Views.DetalleTarea"
+             Title="Detalle de Tarea">
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="10">
+            <!-- Campo para editar el nombre -->
+            <Entry Text="{Binding NombreTarea}" Placeholder="Nombre de la tarea" />
+
+            <!-- CheckBox para editar el estado -->
+            <CheckBox IsChecked="{Binding EstaCompletada}" />
+
+            <!-- Botón para guardar los cambios -->
+            <Button Text="Guardar"
+                    Command="{Binding GuardarCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
