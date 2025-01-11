@@ -9,6 +9,5 @@ namespace ListaTareas.MVVMListaTareas.Models
         // lo hace de manera autoimplmentada. reducen código
         public string NombreTarea { get; set; } = string.Empty; // nombre tarea
         public bool EstaCompletada { get; set; } = false; // Estado (completada o no)
-        public string Importancia { get; set; }
     }
 }

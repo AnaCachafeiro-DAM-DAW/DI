@@ -3,8 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ListaTareas.MVVMListaTareas.Views.DetalleTarea"
              Title="Detalle de Tarea">
+   
     <ContentPage.Content>
         <StackLayout Padding="10" Spacing="10">
+            
             <!-- Campo para editar el nombre -->
             <Entry Text="{Binding NombreTarea}" Placeholder="Nombre de la tarea" />
 

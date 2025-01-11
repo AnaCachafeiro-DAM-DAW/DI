@@ -20,6 +20,9 @@
     <MauiXaml Update="MVVMListaTareas\Views\DetalleTarea.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="MVVMListaTareas\Views\Completadas.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="MVVMListaTareas\Views\Lista.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

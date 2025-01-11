@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListaTareas.MVVMListaTareas.Views;assembly=ListaTareas"
+             x:Class="ListaTareas.MVVMListaTareas.Views.Completadas"
+             Title="Completadas">
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="10">
+     
+            <!-- Lista de tareas Completadas -->
+            <CollectionView ItemsSource="{Binding TareasCompletadas}" >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+
+                            <!-- CheckBox para marcar tareaCompleta -->
+                            <CheckBox IsChecked="{Binding EstaCompletada, Mode=TwoWay}"
+                            CheckedChanged="OnCheckBoxCheckedChanged" />
+                            
+                            <Label Text="{Binding NombreTarea}" VerticalOptions="Center" />
+
+                            <!-- Botón para eliminar tarea -->
+                            <Button Text="Eliminar"
+                                 Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarTareaCommand}"
+                                 CommandParameter="{Binding .}" />
+                        </StackLayout>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

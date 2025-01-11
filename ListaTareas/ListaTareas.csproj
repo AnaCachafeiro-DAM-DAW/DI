@@ -63,6 +63,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="MVVMListaTareas\Views\Completadas.xaml.cs">
+	    <DependentUpon>Completadas.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="MVVMListaTareas\Views\Lista.xaml.cs">
 	    <DependentUpon>Lista.xaml</DependentUpon>
 	  </Compile>
@@ -76,6 +79,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVMListaTareas\Views\DetalleTarea.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MVVMListaTareas\Views\Completadas.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVMListaTareas\Views\Lista.xaml">

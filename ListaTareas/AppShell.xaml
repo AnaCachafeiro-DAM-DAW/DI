@@ -6,6 +6,6 @@
 
     <!-- Hamburguesa -->
     <ShellContent Title="Lista Tareas" ContentTemplate="{DataTemplate local:Lista}" />
-    <ShellContent Route="Detalle Tarea" ContentTemplate="{DataTemplate local:DetalleTarea}" />
+    <ShellContent Title="Completadas" ContentTemplate="{DataTemplate local:Completadas}" />
 
 </Shell>
