@@ -1,5 +1,3 @@
-using ListaTareas.MVVMListaTareas.Views;
-
 namespace Lista
 {
     public partial class App : Application

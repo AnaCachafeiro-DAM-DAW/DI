@@ -1,15 +1,15 @@
 
-using ListaTareas.MVVMListaTareas.ViewModels;
 using ListaTareas.MVVMListaTareas.Models;
+using ListaTareas.MVVMListaTareas.ViewModels;
 namespace ListaTareas.MVVMListaTareas.Views;
 
 public partial class Completadas : ContentPage
 {
     public Completadas()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
 
-        BindingContext = new Logica(); // Aquí se asigna el ViewModel
+        BindingContext = new CompletadasVM(); // Aquí se asigna el ViewModel
     }
 
     private void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)

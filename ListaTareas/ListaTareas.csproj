@@ -57,6 +57,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Resources\Images\acciones\**" />
+	  <Compile Remove="Resources\Images\acciones\**" />
+	  <EmbeddedResource Remove="Resources\Images\acciones\**" />
+	  <MauiCss Remove="Resources\Images\acciones\**" />
+	  <MauiImage Remove="Resources\Images\acciones\**" />
+	  <MauiXaml Remove="Resources\Images\acciones\**" />
+	  <None Remove="Resources\Images\acciones\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
@@ -88,5 +98,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
+
 
 </Project>

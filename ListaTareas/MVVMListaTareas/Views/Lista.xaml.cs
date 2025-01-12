@@ -7,7 +7,7 @@ public partial class Lista : ContentPage
 {
     public Lista()
     {
-		InitializeComponent(); // Esto conecta la parte XAML con el código detrás
+        InitializeComponent(); // Esto conecta la parte XAML con el código detrás
 
         BindingContext = new Logica(); // Aquí se asigna el ViewModel
     }

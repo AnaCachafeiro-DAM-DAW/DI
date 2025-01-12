@@ -1,10 +1,10 @@
 ﻿
-using System.Windows.Input;
 using ListaTareas.MVVMListaTareas.Models;
+using System.Windows.Input;
 
 namespace ListaTareas.MVVMListaTareas.ViewModels
 {
-    public class DetalleTareaViewModel : LogicaCambios
+    public class DetalleTareaVM : LogicaCambios
     {
 
         // variables de clase Tarea
@@ -30,7 +30,7 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
 
         private Tarea tareaOriginal;
 
-        public DetalleTareaViewModel(Tarea tarea, Action<Tarea> onGuardarCambios)
+        public DetalleTareaVM(Tarea tarea, Action<Tarea> onGuardarCambios)
         {
             tareaOriginal = tarea;
             NombreTarea = tarea.NombreTarea;
@@ -58,6 +58,10 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
                 // si no hay cambios, vuelve
                 Shell.Current.GoToAsync("..");
             });
+        }
+
+        public DetalleTareaVM()
+        {
         }
     }
 }

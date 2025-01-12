@@ -1,5 +1,3 @@
-using Microsoft.Maui.Controls;
-
 namespace ListaTareas
 {
     public partial class AppShell : Shell

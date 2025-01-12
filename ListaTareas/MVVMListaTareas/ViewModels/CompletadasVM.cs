@@ -1,5 +1,4 @@
 ﻿using ListaTareas.MVVMListaTareas.ViewModels;
-using System.Windows.Input;
 
 [QueryProperty(nameof(NombreTarea), "NombreTarea")]
 [QueryProperty(nameof(EstaCompletada), "EstaCompletada")]

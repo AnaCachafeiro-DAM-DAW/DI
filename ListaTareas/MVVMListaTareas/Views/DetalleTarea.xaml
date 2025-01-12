@@ -30,7 +30,7 @@
 
             <!-- Botón cancelar -->
             <Button Text="Volver"
-                    Command="{Binding CancelarCommand}"
+                    Command="{Binding CancelarCommand}" 
                     BackgroundColor="Gray"
                     TextColor="White"
                     CornerRadius="14"
