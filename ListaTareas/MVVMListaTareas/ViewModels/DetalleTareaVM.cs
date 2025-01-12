@@ -1,35 +1,63 @@
 ﻿
-using ListaTareas.MVVMListaTareas.ViewModels;
 using System.Windows.Input;
+using ListaTareas.MVVMListaTareas.Models;
 
-[QueryProperty(nameof(NombreTarea), "NombreTarea")]
-[QueryProperty(nameof(EstaCompletada), "EstaCompletada")]
-public class DetalleTareaVM : LogicaCambios
+namespace ListaTareas.MVVMListaTareas.ViewModels
 {
-    private string nombreTarea;
-    public string NombreTarea
+    public class DetalleTareaViewModel : LogicaCambios
     {
-        get => nombreTarea;
-        set => SetProperty(ref nombreTarea, value);
-    }
 
-    private bool estaCompletada;
-    public bool EstaCompletada
-    {
-        get => estaCompletada;
-        set => SetProperty(ref estaCompletada, value);
-    }
+        // variables de clase Tarea
+        // varible nombre tarea
+        private string nombreTarea;
+        public string NombreTarea
+        {
+            get => nombreTarea;
+            set => SetProperty(ref nombreTarea, value);
+        }
 
-    public ICommand GuardarCommand { get; }
+        // variable si está completada o no
+        private bool estaCompletada;
+        public bool EstaCompletada
+        {
+            get => estaCompletada;
+            set => SetProperty(ref estaCompletada, value);
+        }
 
-    public DetalleTareaVM()
-    {
-        GuardarCommand = new Command(GuardarCambios);
-    }
+        // opciones de los controles
+        public ICommand GuardarCambiosCommand { get; }
+        public ICommand CancelarCommand { get; }
 
-    private async void GuardarCambios()
-    {
-        // Guarda los cambios y vuelve a la pantalla anterior.
-        await Shell.Current.GoToAsync("..");
+        private Tarea tareaOriginal;
+
+        public DetalleTareaViewModel(Tarea tarea, Action<Tarea> onGuardarCambios)
+        {
+            tareaOriginal = tarea;
+            NombreTarea = tarea.NombreTarea;
+            EstaCompletada = tarea.EstaCompletada;
+
+            // Comando para guardar cambios
+            GuardarCambiosCommand = new Command(() =>
+            {
+
+                // aquí actualiza las propiedades de la tarea original
+                tareaOriginal.NombreTarea = NombreTarea;
+                tareaOriginal.EstaCompletada = EstaCompletada;
+
+                // llmamos al callback sobre la tarea actual
+                onGuardarCambios?.Invoke(tareaOriginal);
+
+                // vuelve a la panatalla anterior
+                Shell.Current.GoToAsync("..");
+            });
+
+            // comando cancelar cambios
+            CancelarCommand = new Command(() =>
+            {
+
+                // si no hay cambios, vuelve
+                Shell.Current.GoToAsync("..");
+            });
+        }
     }
 }

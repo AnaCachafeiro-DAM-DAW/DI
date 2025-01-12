@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Windows.Input;
 using ListaTareas.MVVMListaTareas.Models;
+using ListaTareas.MVVMListaTareas.ViewModels;
+using ListaTareas.MVVMListaTareas.Views;
 
 namespace ListaTareas.MVVMListaTareas.ViewModels
 {
@@ -87,16 +89,21 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
 
         }
 
-        // Método para editar una tarea
+        // Método para editar una tarea en Logica.cs
         private async void EditarTarea(Tarea tarea)
         {
             if (tarea == null) return;
 
+            // Navegación a DetalleTarea y pasar la tarea como parámetro
             try
             {
-                // Usa las propiedades del objeto 'tarea' recibido como argumento
-                var route = $"DetalleTarea?NombreTarea={Uri.EscapeDataString(tarea.NombreTarea)}&EstaCompletada={tarea.EstaCompletada}";
-                await Shell.Current.GoToAsync(route);
+                var viewModel = new DetalleTareaViewModel(tarea, tareaActualizada =>
+                {
+                    // Actualizar las listas después de editar
+                    MoverTarea(tareaActualizada);
+                });
+                var detalleTareaPage = new DetalleTarea { BindingContext = viewModel };
+                await Shell.Current.Navigation.PushAsync(detalleTareaPage);
             }
             catch (Exception ex)
             {
@@ -104,30 +111,38 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
             }
         }
 
+
         // Método para manejar el cambio de estado de una tarea
         public void MoverTarea(Tarea tarea)
         {
+            // Si la tarea está completada, debe ir a la lista de tareas completadas
             if (tarea.EstaCompletada)
             {
-                // Mover a tareas completadas
-                TareasActivas.Remove(tarea);
+                // Elimina la tarea de la lista activa (si está en ella) y la agrega a la lista completada
+                if (TareasActivas.Contains(tarea))
+                {
+                    TareasActivas.Remove(tarea);
+                }
                 if (!TareasCompletadas.Contains(tarea))
                 {
                     TareasCompletadas.Add(tarea);
                 }
             }
+            // Si la tarea no está completada, debe ir a la lista de tareas activas
             else
             {
-                // Mover a tareas activas
-                TareasCompletadas.Remove(tarea);
+                // Elimina la tarea de la lista completada (si está en ella) y la agrega a la lista activa
+                if (TareasCompletadas.Contains(tarea))
+                {
+                    TareasCompletadas.Remove(tarea);
+                }
                 if (!TareasActivas.Contains(tarea))
                 {
                     TareasActivas.Add(tarea);
                 }
             }
         }
-
     }
 
-}
+    }
 

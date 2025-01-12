@@ -16,12 +16,21 @@ public partial class Lista : ContentPage
     // Llmamos a este método cada vez que el checkBox cambia de estado
     private void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        if (sender is CheckBox checkBox && checkBox.BindingContext is Tarea tarea)
+        var checkbox = sender as CheckBox;
+
+        // Asegurándonos de que el contexto de enlace es correcto y que tenemos la tarea
+        if (checkbox != null && checkbox.BindingContext is Tarea tarea)
         {
-            if (BindingContext is Logica viewModel)
+            // Accedemos a la clase Logica desde el BindingContext
+            var viewModel = BindingContext as Logica;
+
+            // Llamamos al método MoverTarea en el ViewModel (Logica)
+            if (viewModel != null)
             {
                 viewModel.MoverTarea(tarea);
             }
         }
     }
+
 }
+

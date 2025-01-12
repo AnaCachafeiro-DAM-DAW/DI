@@ -2,20 +2,39 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ListaTareas.MVVMListaTareas.Views.DetalleTarea"
-             Title="Detalle de Tarea">
-   
+             Title="Editar Tarea"
+             BackgroundColor="#333333">
+
     <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="10">
-            
-            <!-- Campo para editar el nombre -->
-            <Entry Text="{Binding NombreTarea}" Placeholder="Nombre de la tarea" />
+        <StackLayout Padding="20" Spacing="20">
 
-            <!-- CheckBox para editar el estado -->
-            <CheckBox IsChecked="{Binding EstaCompletada}" />
+            <!-- Edita el nombre de la tarea -->
+            <Entry Placeholder="Nombre de la tarea"
+                   Text="{Binding NombreTarea}"
+                   FontSize="18"
+                   TextColor="White" />
 
-            <!-- Botón para guardar los cambios -->
-            <Button Text="Guardar"
-                    Command="{Binding GuardarCommand}" />
+            <!-- Checkbox como completada -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <CheckBox IsChecked="{Binding EstaCompletada}" />
+                <Label Text="Completada" VerticalOptions="Center" FontSize="18" TextColor="White" />
+            </StackLayout>
+
+            <!-- Botón guardar cambios -->
+            <Button Text="Guardar Cambios"
+                    Command="{Binding GuardarCambiosCommand}"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    CornerRadius="14"
+                    FontAttributes="Bold" />
+
+            <!-- Botón cancelar -->
+            <Button Text="Volver"
+                    Command="{Binding CancelarCommand}"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    CornerRadius="14"
+                    FontAttributes="Bold" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
