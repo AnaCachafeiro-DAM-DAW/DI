@@ -109,25 +109,31 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         {
             if (tarea == null) return;
 
-            try
+            var viewModel = new DetalleTareaVM(tarea, tareaEditada =>
             {
-                var viewModel = new DetalleTareaVM(tarea, tareaActualizada =>
+                // Llamar a MoverTarea para actualizar la lista (mover entre tareas activas/completadas)
+                MoverTarea(tareaEditada);
+
+                // Ahora reemplazar la tarea editada en la lista original
+                var index = TareasActivas.IndexOf(tarea);
+                if (index != -1)
                 {
-                    // mensaje para comprobación
-                    Debug.WriteLine($"EditarTarea: tareaActualizada.NombreTarea={tareaActualizada.NombreTarea}, EstaCompletada={tareaActualizada.EstaCompletada}, Importancia={tareaActualizada.Importancia}");
+                    TareasActivas[index] = tareaEditada;
+                }
+                else
+                {
+                    index = TareasCompletadas.IndexOf(tarea);
+                    if (index != -1)
+                    {
+                        TareasCompletadas[index] = tareaEditada;
+                    }
+                }
+            });
 
-                    // Actualizar las listas después de editar
-                    MoverTarea(tareaActualizada);
-                });
-
-                var detalleTareaPage = new DetalleTarea { BindingContext = viewModel };
-                await Shell.Current.Navigation.PushAsync(detalleTareaPage);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error al navegar a DetalleTarea: {ex.Message}");
-            }
+            var detalleTareaPage = new DetalleTarea { BindingContext = viewModel };
+            await Shell.Current.Navigation.PushAsync(detalleTareaPage);
         }
+
 
 
         // Método para clasificar las tareas
@@ -178,6 +184,9 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         // Método para manejar el cambio de estado de una tarea
         public void MoverTarea(Tarea tarea)
         {
+
+            Debug.WriteLine($"MoverTarea: Nombre={tarea.NombreTarea}, EstaCompletada={tarea.EstaCompletada}, Importancia={tarea.Importancia}");
+
             // Si la tarea está completada, debe ir a la lista de tareas completadas
             if (tarea.EstaCompletada)
             {
@@ -186,6 +195,9 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
                 {
                     TareasCompletadas.Add(tarea);
                 }
+
+                TareasActivas.Remove(tarea);
+
                 TareasImportantes.Remove(tarea);
                 TareasNoImportantes.Remove(tarea);
             }

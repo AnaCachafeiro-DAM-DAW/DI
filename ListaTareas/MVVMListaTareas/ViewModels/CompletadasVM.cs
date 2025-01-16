@@ -1,4 +1,7 @@
 ﻿using ListaTareas.MVVMListaTareas.ViewModels;
+using ListaTareas.MVVMListaTareas.Models;
+using System.Collections.ObjectModel;
+using ListaTareas;
 
 [QueryProperty(nameof(NombreTarea), "NombreTarea")]
 [QueryProperty(nameof(EstaCompletada), "EstaCompletada")]
@@ -28,4 +31,12 @@ public class CompletadasVM : LogicaCambios
         set => SetProperty(ref importancia, value);
     }
 
+    // Lista de tareas completadas que será mostrada en la vista
+    public ObservableCollection<Tarea> TareasCompletadas { get; set; }
+
+    public CompletadasVM()
+    {
+        // llamo a las tareas completadas desde el método de Logica
+        TareasCompletadas = new ObservableCollection<Tarea>(AppShell.Logica.TareasCompletadas);
+    }
 }

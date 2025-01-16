@@ -4,8 +4,10 @@
        xmlns:local="clr-namespace:ListaTareas.MVVMListaTareas.Views;assembly=ListaTareas"
        x:Class="ListaTareas.AppShell">
 
-    <!-- Hamburguesa -->
+    <!-- Hamburguesa /  Navegación de routas -->
+    <!-- Página principal -->
     <ShellContent Title="Lista Tareas" ContentTemplate="{DataTemplate local:Lista}" />
+    <!-- Página de tarea completadas -->
     <ShellContent Title="Completadas" ContentTemplate="{DataTemplate local:Completadas}" />
 
 </Shell>

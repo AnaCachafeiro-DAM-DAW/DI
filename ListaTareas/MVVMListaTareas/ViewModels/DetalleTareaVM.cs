@@ -29,6 +29,10 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         public ICommand CancelarCommand { get; }
 
         private Tarea tareaOriginal;
+        private Action<Tarea> onGuardarCambios;
+
+        // Usar la referencia de Logica estática
+        private Logica logica => AppShell.Logica;
 
         public DetalleTareaVM(Tarea tarea, Action<Tarea> onGuardarCambios)
         {
