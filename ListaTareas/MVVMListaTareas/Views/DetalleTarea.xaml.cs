@@ -13,7 +13,7 @@ public partial class DetalleTarea : ContentPage
     {
         InitializeComponent();
 
-        BindingContext = new DetalleTareaVM(); // Aquí se asigna el ViewModel
+       // BindingContext = new DetalleTareaVM(); // Aquí se asigna el ViewModel
         BindingContext = AppShell.Logica;
 
 

@@ -12,5 +12,5 @@
     <ShellContent Title="Lista Tareas" ContentTemplate="{DataTemplate local:Lista}" />
     <!-- Página de tarea completadas -->
     <ShellContent Title="Completadas" ContentTemplate="{DataTemplate local:Completadas}" />
-
+    
 </Shell>

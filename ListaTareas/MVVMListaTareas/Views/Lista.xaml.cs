@@ -9,7 +9,7 @@ public partial class Lista : ContentPage
     {
         InitializeComponent(); // Esto conecta la parte XAML con el código detrás
 
-        BindingContext = new Logica(); // Aquí se asigna el ViewModel
+        BindingContext = AppShell.Logica; // Aquí se asigna el ViewModel
     }
 
     // Método para manejar el cambio de estado del checkBox y mover las listas de tareas
