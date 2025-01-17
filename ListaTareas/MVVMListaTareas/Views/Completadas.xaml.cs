@@ -19,7 +19,7 @@ public partial class Completadas : ContentPage
     // Manejador de evento para CheckBox CheckedChanged
     // que sirve para mover de lista a otra lista
 
-    // Método a sincrónico
+    // Método sincrónico
     private void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
         if (sender is CheckBox checkBox && checkBox.BindingContext is Tarea tarea)
@@ -27,14 +27,18 @@ public partial class Completadas : ContentPage
             // Actualiza el estado de la tarea
             tarea.EstaCompletada = e.Value;
 
-            // Llamar al método MoverTarea del ViewModel
+            // Mueve la tarea a la lista correspondiente
             AppShell.Logica.MoverTarea(tarea);
         }
-
-        // Navegar a la pantalla de completadas
-        Shell.Current.GoToAsync("Completadas");
     }
 
-
-
+        // Navegar a la pantalla principal siempre
+        // método async
+      private async void OnVolverClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("..");
+    }
 }
+
+
+

@@ -12,7 +12,7 @@
             <CollectionView ItemsSource="{Binding TareasCompletadas}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame Padding="10" Margin="5" BackgroundColor="White" CornerRadius="10">
+                        <Frame Padding="10" Margin="10,20" BackgroundColor="White" CornerRadius="10">
                             <StackLayout Spacing="10">
 
                                 <!-- Tarea con CheckBox -->
@@ -47,7 +47,7 @@
 
             <!-- Botón Volver -->
             <Button Text="Volver"
-                    Command="{Binding CancelarCommand}" 
+                    Command="{Binding OnVolverClicked}" 
                     BackgroundColor="Gray"
                     TextColor="White"
                     CornerRadius="12"

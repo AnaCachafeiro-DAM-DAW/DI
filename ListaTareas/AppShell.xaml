@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:local="clr-namespace:ListaTareas.MVVMListaTareas.Views;assembly=ListaTareas"
+       xmlns:views="clr-namespace:ListaTareas.MVVMListaTareas.Views"
        x:Class="ListaTareas.AppShell">
 
-    <!-- Va la ruta para la pantalla principal -->
-    <ShellContent Route="Lista Tareas" ContentTemplate="{DataTemplate local:Lista}" />
-    
-    <!-- Hamburguesa /  Navegación de routas -->
     <!-- Página principal -->
-    <ShellContent Title="Lista Tareas" ContentTemplate="{DataTemplate local:Lista}" />
-    <!-- Página de tarea completadas -->
-    <ShellContent Title="Completadas" ContentTemplate="{DataTemplate local:Completadas}" />
-    
+    <ShellContent Title="Lista Tareas" ContentTemplate="{DataTemplate views:Lista}" Route="Lista" />
+
+    <!-- Página de tareas completadas -->
+    <ShellContent Title="Completadas" ContentTemplate="{DataTemplate views:Completadas}" Route="Completadas" />
+
 </Shell>

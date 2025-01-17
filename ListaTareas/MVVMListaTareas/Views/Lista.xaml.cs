@@ -32,5 +32,16 @@ public partial class Lista : ContentPage
         }
     }
 
+    private void OnCheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        if (sender is CheckBox checkBox && checkBox.BindingContext is Tarea tarea)
+        {
+            // Llama al método AlternarImportancia en el ViewModel (Logica)
+            (BindingContext as Logica)?.AlternarImportancia(tarea);
+        }
+    }
+
+
+
 }
 

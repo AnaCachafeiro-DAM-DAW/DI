@@ -3,6 +3,7 @@ using ListaTareas.MVVMListaTareas.Views;
 using System.Collections.ObjectModel; // Cambiado a ObservableCollection
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Reflection;
 using System.Windows.Input;
 
 namespace ListaTareas.MVVMListaTareas.ViewModels
@@ -182,7 +183,7 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         }
 
         // Método para alternar la importancia de la tarea
-        private void AlternarImportancia(Tarea tarea)
+        public void AlternarImportancia(Tarea tarea)
         {
             if (tarea == null) return;
 
@@ -191,7 +192,9 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
 
             // Después de cambiar la importancia, reclasificar la tarea
             ClasificarTarea(tarea);
+
         }
+
 
 
         // Método para manejar el cambio de estado de una tarea
