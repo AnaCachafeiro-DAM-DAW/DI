@@ -15,7 +15,7 @@
                    TextColor="White" />
 
             <!-- Checkbox como completada -->
-            <StackLayout Orientation="Horizontal" Spacing="10">
+            <StackLayout Orientation="Horizontal">
                 <CheckBox IsChecked="{Binding EstaCompletada}" />
                 <Label Text="Completada" VerticalOptions="Center" FontSize="18" TextColor="White" />
             </StackLayout>

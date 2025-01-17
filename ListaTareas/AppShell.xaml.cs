@@ -15,6 +15,9 @@ namespace ListaTareas
 
             // ruta para la pantalla detalle
             Routing.RegisterRoute("DetalleTarea", typeof(DetalleTarea));
+            // ruta para la pantalla completadas
+            Routing.RegisterRoute("Completadas", typeof(Completadas));
+
         }
 
         internal static Logica Logica { get; set; }

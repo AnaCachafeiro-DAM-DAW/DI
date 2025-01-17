@@ -1,6 +1,7 @@
 ﻿using ListaTareas.MVVMListaTareas.Models;
 using ListaTareas.MVVMListaTareas.Views;
 using System.Collections.ObjectModel; // Cambiado a ObservableCollection
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Windows.Input;
 
@@ -69,12 +70,24 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
                 }
             }
 
+
             // COMANDOS
             // Inicialización de los comandos
             AgregarTareaCommand = new Command(AgregarTarea);
             EliminarTareaCommand = new Command<Tarea>(EliminarTarea);
             EditarTareaCommand = new Command<Tarea>(EditarTarea);
             ToggleImportanciaCommand = new Command<Tarea>(AlternarImportancia); // Nueva lógica para alternar la importancia
+        }
+
+        // Métodos para manejar cambios
+        private void OnTareasActivasChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged(nameof(TareasActivas));
+        }
+
+        private void OnTareasCompletadasChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnPropertyChanged(nameof(TareasCompletadas));
         }
 
         // MÉTODOS
@@ -98,8 +111,9 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         {
             if (tarea != null)
             {
-                // Elimina la tarea de la colección
+                // Elimina las tareas de sus colecciones
                 TareasActivas.Remove(tarea);
+                TareasCompletadas.Remove(tarea);
             }
 
         }
@@ -184,34 +198,36 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         // Método para manejar el cambio de estado de una tarea
         public void MoverTarea(Tarea tarea)
         {
+            Debug.WriteLine($"MoverTarea: {tarea.NombreTarea}, Completada={tarea.EstaCompletada}");
 
-            Debug.WriteLine($"MoverTarea: Nombre={tarea.NombreTarea}, EstaCompletada={tarea.EstaCompletada}, Importancia={tarea.Importancia}");
-
-            // Si la tarea está completada, debe ir a la lista de tareas completadas
             if (tarea.EstaCompletada)
             {
-                TareasActivas.Remove(tarea);
+
+                // mueve de activas a completadas
                 if (!TareasCompletadas.Contains(tarea))
                 {
                     TareasCompletadas.Add(tarea);
                 }
 
-                TareasActivas.Remove(tarea);
-
-                TareasImportantes.Remove(tarea);
-                TareasNoImportantes.Remove(tarea);
+                // elimina de activas si ya está
+                if (TareasActivas.Contains(tarea))
+                {
+                    TareasActivas.Remove(tarea);
+                }
             }
-            // Si la tarea no está completada, debe ir a la lista de tareas activas
             else
             {
-                TareasCompletadas.Remove(tarea);
+                // mueve de activas a completadas
                 if (!TareasActivas.Contains(tarea))
                 {
                     TareasActivas.Add(tarea);
                 }
 
-                // Reclasifica la tarea por importancia
-                ClasificarTarea(tarea);
+                // elimina de completadas si ya están
+                if (TareasCompletadas.Contains(tarea))
+                {
+                    TareasCompletadas.Remove(tarea);
+                }
             }
         }
 
@@ -220,6 +236,7 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
     }
 
 }
+
 
 
 
