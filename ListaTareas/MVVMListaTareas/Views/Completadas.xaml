@@ -12,7 +12,7 @@
             <CollectionView ItemsSource="{Binding TareasCompletadas}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame Padding="10" Margin="5" BackgroundColor="#444444" CornerRadius="10">
+                        <Frame Padding="10" Margin="5" BackgroundColor="White" CornerRadius="10">
                             <StackLayout Spacing="10">
 
                                 <!-- Tarea con CheckBox -->
@@ -27,7 +27,7 @@
                                 <!-- Nombre de la tarea -->
                                 <Label Text="{Binding NombreTarea}"
                                             FontSize="22"
-                                            TextColor="White"
+                                            TextColor="Black"
                                             FontAttributes="Bold"
                                             Margin="5,5,0,0" />
 
@@ -37,7 +37,7 @@
                                         CommandParameter="{Binding .}"
                                         BackgroundColor="Black"
                                         TextColor="White"
-                                        CornerRadius="14"
+                                        CornerRadius="12"
                                         FontAttributes="Bold" />
                             </StackLayout>
                         </Frame>
@@ -50,7 +50,7 @@
                     Command="{Binding CancelarCommand}" 
                     BackgroundColor="Gray"
                     TextColor="White"
-                    CornerRadius="14"
+                    CornerRadius="12"
                     FontAttributes="Bold"
                     HorizontalOptions="Center" />
         </StackLayout>

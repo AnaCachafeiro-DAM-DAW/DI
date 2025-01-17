@@ -4,11 +4,8 @@
              xmlns:local="clr-namespace:ListaTareas"
              x:Class="Lista.App">
 
-   <!-- Estructura inicial de la app , que llama a la view vista --> 
+   <!-- Estructura inicial de la app , que llama a la view vista -->
     <Application.MainPage>
-        <!-- <Shell>
-            <ShellContent Route="Lista" ContentTemplate="{DataTemplate local:Lista}" />
-        </Shell>-->
         <local:AppShell />
     </Application.MainPage>
 

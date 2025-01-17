@@ -4,6 +4,9 @@
        xmlns:local="clr-namespace:ListaTareas.MVVMListaTareas.Views;assembly=ListaTareas"
        x:Class="ListaTareas.AppShell">
 
+    <!-- Va la ruta para la pantalla principal -->
+    <ShellContent Route="Lista Tareas" ContentTemplate="{DataTemplate local:Lista}" />
+    
     <!-- Hamburguesa /  Navegación de routas -->
     <!-- Página principal -->
     <ShellContent Title="Lista Tareas" ContentTemplate="{DataTemplate local:Lista}" />

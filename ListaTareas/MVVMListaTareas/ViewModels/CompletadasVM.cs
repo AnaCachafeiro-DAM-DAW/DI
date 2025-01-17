@@ -36,33 +36,35 @@ public class CompletadasVM : LogicaCambios
     // Lista de tareas completadas que será mostrada en la vista
     public ObservableCollection<Tarea> TareasCompletadas { get; set; }
 
-    // Propiedad para el comando Volver
-    public ICommand VolverCommand { get; }
+    // Propiedad para el comando retornar
+    public ICommand CancelarCommand { get; } // botón que retorna
 
 
     public CompletadasVM()
     {
-        // llamo a las tareas completadas desde el método de Logica
+        // Copia inicial de tareas completadas
         TareasCompletadas = new ObservableCollection<Tarea>(AppShell.Logica.TareasCompletadas);
 
-        // Vincular directamente a la lista de tareas global
-        TareasCompletadas = AppShell.Logica.TareasCompletadas;
+        // Vincular a los cambios en la colección global
+        AppShell.Logica.TareasCompletadas.CollectionChanged += (s, e) =>
+        {
+            SincronizarConGlobal();
+        };
 
-        // reconoce los cambios en la colección global
-        AppShell.Logica.TareasCompletadas.CollectionChanged += OnTareasCompletadasChanged;
-
-        // Inicializa el comando Volver
-        VolverCommand = new Command(async () => await Shell.Current.GoToAsync("//Lista"));
-
+        // Inicialización del comando Cancelar
+        // shell.current indica que debe regresar a la pantalla anterior
+        CancelarCommand = new Command(async () => await Shell.Current.GoToAsync(".."));
     }
 
-    // hacemos que los cambios en el método tareasCompletas se reflejen en vista completadas
-    private void OnTareasCompletadasChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+    // este método SincronizarConGlobal mantendrá ambas listas sincronizadas
+    private void SincronizarConGlobal()
     {
-        OnPropertyChanged(nameof(TareasCompletadas)); // actualiza la vista cuando cambia la lista 
+        TareasCompletadas.Clear();
+        foreach (var tarea in AppShell.Logica.TareasCompletadas)
+        {
+            TareasCompletadas.Add(tarea);
+        }
     }
-
-    
 
 
 }

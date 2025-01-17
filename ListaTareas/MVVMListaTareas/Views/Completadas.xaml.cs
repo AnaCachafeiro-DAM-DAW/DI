@@ -17,21 +17,18 @@ public partial class Completadas : ContentPage
 
 
     // Manejador de evento para CheckBox CheckedChanged
+    // que sirve para mover de lista a otra lista
     private void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
     {
-        // Verifica que el sender sea un CheckBox y que el BindingContext sea una tarea
         if (sender is CheckBox checkBox && checkBox.BindingContext is Tarea tarea)
         {
-            // Actualizar la propiedad EstaCompletada en la tarea
+            // Actualizar el estado de la tarea
             tarea.EstaCompletada = e.Value;
 
-            // Invocar el método MoverTarea desde el ViewModel o Logica
-            if (BindingContext is CompletadasVM viewModel)
-            {
-                // Aquí se mueve la tarea entre listas (activa/completada)
-                AppShell.Logica.MoverTarea(tarea);
-            }
+            // Llamar al método MoverTarea del ViewModel
+            AppShell.Logica.MoverTarea(tarea);
+        }
+    }
 
-        }
-        }
-        }
+}
+    

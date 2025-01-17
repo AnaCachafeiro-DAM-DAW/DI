@@ -35,7 +35,6 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         public ICommand EditarTareaCommand { get; } // en detalle
         public ICommand ToggleImportanciaCommand { get; }  // lista
 
-
         public Logica()
         {
             // Inicialización de las listas
@@ -198,40 +197,40 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         // Método para manejar el cambio de estado de una tarea
         public void MoverTarea(Tarea tarea)
         {
+            if (tarea == null) return;
+
             Debug.WriteLine($"MoverTarea: {tarea.NombreTarea}, Completada={tarea.EstaCompletada}");
 
             if (tarea.EstaCompletada)
             {
-
-                // mueve de activas a completadas
+                // Mover a completadas
+                TareasActivas.Remove(tarea); // Siempre intenta remover de activas
                 if (!TareasCompletadas.Contains(tarea))
                 {
                     TareasCompletadas.Add(tarea);
                 }
 
-                // elimina de activas si ya está
-                if (TareasActivas.Contains(tarea))
-                {
-                    TareasActivas.Remove(tarea);
-                }
+                // Eliminar de las listas de importancia si es completada
+                TareasImportantes.Remove(tarea);
+                TareasNoImportantes.Remove(tarea);
             }
             else
             {
-                // mueve de activas a completadas
+                // Mover a activas
+                TareasCompletadas.Remove(tarea); // Siempre intenta remover de completadas
                 if (!TareasActivas.Contains(tarea))
                 {
                     TareasActivas.Add(tarea);
                 }
 
-                // elimina de completadas si ya están
-                if (TareasCompletadas.Contains(tarea))
-                {
-                    TareasCompletadas.Remove(tarea);
-                }
+                // Reclasificar según su importancia
+                ClasificarTarea(tarea);
             }
+
+            // Notificar cambios en las colecciones
+            OnPropertyChanged(nameof(TareasActivas));
+            OnPropertyChanged(nameof(TareasCompletadas));
         }
-
-
 
     }
 
