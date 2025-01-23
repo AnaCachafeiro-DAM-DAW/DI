@@ -1,7 +1,5 @@
 
 using ListaTareas.MVVMListaTareas.Models;
-using ListaTareas.MVVMListaTareas.ViewModels;
-using System.Diagnostics;
 
 namespace ListaTareas.MVVMListaTareas.Views;
 
@@ -30,13 +28,6 @@ public partial class Completadas : ContentPage
             // Mueve la tarea a la lista correspondiente
             AppShell.Logica.MoverTarea(tarea);
         }
-    }
-
-        // Navegar a la pantalla principal siempre
-        // método async
-      private async void OnVolverClicked(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("..");
     }
 }
 

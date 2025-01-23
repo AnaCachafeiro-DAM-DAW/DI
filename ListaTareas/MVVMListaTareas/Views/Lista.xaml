@@ -33,72 +33,102 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout Padding="10" Spacing="10">
-            <Entry Placeholder="Nueva tarea"
-                   Text="{Binding NuevaTarea}" />
+        <StackLayout Padding="10" Spacing="0">
+            <!-- HEADER -->
+            <Grid BackgroundColor="Silver" Padding="10">
+                <Label Text="Tareas Activas"
+               FontSize="14"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="Black"/>
+            </Grid>
 
-            <Button Text="Añadir"
-                    Command="{Binding AgregarTareaCommand}"
-                    Style="{StaticResource ButtonStyleBase}" />
+            <!-- CONTENIDO PRINCIPAL -->
+            <StackLayout Padding="10" Spacing="5" VerticalOptions="FillAndExpand">
+                <!-- Entry y Button en un StackLayout con poco espacio -->
+                <StackLayout Orientation="Horizontal" Spacing="5">
+                    <Entry Placeholder="Nueva tarea"
+                           Text="{Binding NuevaTarea}" 
+                           TextColor="white"
+                           HorizontalOptions="FillAndExpand" />
+                    <Button Text="Añadir"
+                            Command="{Binding AgregarTareaCommand}"
+                            Style="{StaticResource ButtonStyleBase}" 
+                            Margin="0"
+                            TextColor="white"
+                            BackgroundColor="Black"/>
+                </StackLayout>
 
-            <CollectionView ItemsSource="{Binding TareasActivas}" VerticalOptions="FillAndExpand">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Padding="12" Margin="10,20" BackgroundColor="White" CornerRadius="10" HasShadow="True">
-                            <Frame.Triggers>
-                                <!-- DataTrigger para cambiar color según la propiedad Importancia -->
-                                <DataTrigger TargetType="Frame" Binding="{Binding Importancia}" Value="True">
-                                    <Setter Property="BackgroundColor" Value="Khaki"/>
-                                </DataTrigger>
-                                <DataTrigger TargetType="Frame" Binding="{Binding Importancia}" Value="False">
-                                    <Setter Property="BackgroundColor" Value="White" />
-                                </DataTrigger>
-                            </Frame.Triggers>
+                <!-- CollectionView para mostrar las tareas -->
+                <CollectionView ItemsSource="{Binding TareasActivas}" VerticalOptions="FillAndExpand" Margin="0,10,0,0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="5" Margin="5,0" BackgroundColor="White" CornerRadius="10" HasShadow="True">
+                                <!-- Cambiar el color del Frame según la propiedad Importancia -->
+                                <Frame.Triggers>
+                                    <DataTrigger TargetType="Frame" Binding="{Binding Importancia}" Value="True">
+                                        <Setter Property="BackgroundColor" Value="Khaki"/>
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="Frame" Binding="{Binding Importancia}" Value="False">
+                                        <Setter Property="BackgroundColor" Value="White"/>
+                                    </DataTrigger>
+                                </Frame.Triggers>
 
-                            <Grid Padding="10" ColumnSpacing="10" RowSpacing="10" VerticalOptions="Center">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
+                                <Grid Padding="10" ColumnSpacing="10" RowSpacing="10" VerticalOptions="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
 
-                                <CheckBox IsChecked="{Binding Importancia, Mode=TwoWay}" 
-                                          CheckedChanged="OnCheckedChanged" />
+                                    <!-- CheckBox que controla la propiedad Importancia -->
+                                    <CheckBox IsChecked="{Binding Importancia, Mode=TwoWay}" />
 
-                                <Label Text="{Binding NombreTarea}" 
-                                       VerticalOptions="Center" 
-                                       FontSize="Small" 
-                                       Grid.Column="1"
-                                       TextColor="Black" 
-                                       FontAttributes="Bold"/>
+                                    <Label Text="{Binding NombreTarea}" 
+                           VerticalOptions="Center" 
+                           FontSize="Small" 
+                           Grid.Column="1"
+                           TextColor="Black" 
+                           FontAttributes="Bold"/>
 
-                                <Button Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarTareaCommand}"
-                                        CommandParameter="{Binding .}"
-                                        BackgroundColor="#4B4B4B"
-                                        TextColor="White" 
-                                        CornerRadius="10"
-                                        FontSize="14"
-                                        Margin="5,0,0,0"
-                                        Grid.Column="2">
-                                    <Button.Text>Eliminar</Button.Text>
-                                </Button>
+                                    <Button Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarTareaCommand}"
+                            CommandParameter="{Binding .}"
+                            BackgroundColor="#4B4B4B"
+                            TextColor="White" 
+                            CornerRadius="10"
+                            FontSize="14"
+                            Margin="5,0,0,0"
+                            Grid.Column="2">
+                                        <Button.Text>Eliminar</Button.Text>
+                                    </Button>
 
-                                <Button Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EditarTareaCommand}"
-                                        CommandParameter="{Binding .}"
-                                        BackgroundColor="#D3D3D3"
-                                        TextColor="Black" 
-                                        CornerRadius="10"
-                                        FontSize="14"
-                                        Margin="5,0,0,0"
-                                        Grid.Column="3">
-                                    <Button.Text>Editar</Button.Text>
-                                </Button>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                                    <Button Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EditarTareaCommand}"
+                            CommandParameter="{Binding .}"
+                            BackgroundColor="#D3D3D3"
+                            TextColor="Black" 
+                            CornerRadius="10"
+                            FontSize="14"
+                            Margin="5,0,0,0"
+                            Grid.Column="3">
+                                        <Button.Text>Editar</Button.Text>
+                                    </Button>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </StackLayout>
+
+            <!-- FOOTER -->
+            <Grid BackgroundColor="#444444" Padding="10">
+                <Label Text="© 2025 · Aplicación de Tareas"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="White"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

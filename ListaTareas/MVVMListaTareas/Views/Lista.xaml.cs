@@ -40,8 +40,5 @@ public partial class Lista : ContentPage
             (BindingContext as Logica)?.AlternarImportancia(tarea);
         }
     }
-
-
-
 }
 

@@ -3,7 +3,6 @@ using ListaTareas.MVVMListaTareas.Views;
 using System.Collections.ObjectModel; // Cambiado a ObservableCollection
 using System.Collections.Specialized;
 using System.Diagnostics;
-using System.Reflection;
 using System.Windows.Input;
 
 namespace ListaTareas.MVVMListaTareas.ViewModels
@@ -34,7 +33,7 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         public ICommand AgregarTareaCommand { get; } // en lista
         public ICommand EliminarTareaCommand { get; } // en lista y completadas
         public ICommand EditarTareaCommand { get; } // en detalle
-        public ICommand ToggleImportanciaCommand { get; }  // lista
+        public ICommand ImportanciaCommand { get; }  // lista
 
         public Logica()
         {
@@ -45,13 +44,13 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
             TareasImportantes = new ObservableCollection<Tarea>();
             TareasNoImportantes = new ObservableCollection<Tarea>();
 
-            ToggleImportanciaCommand = new Command<Tarea>(AlternarImportancia); // Inicialización del comando
+            ImportanciaCommand = new Command<Tarea>(AlternarImportancia); // Inicialización del comando
 
 
             // Inicialización de tareas con clasificación automática
             var tareasIniciales = new List<Tarea>
     {
-                // añado dos a mano para tener info ya en la pantalla inicial y completadas
+                // añado una opción de cada variable para tener info ya en la pantalla inicial, en completadas e importancia
             new Tarea { NombreTarea = "Cumpleaños Javi", EstaCompletada = false },
             new Tarea { NombreTarea = "Dentista", EstaCompletada = true },
             new Tarea { NombreTarea = "Comprar regalo", EstaCompletada = false, Importancia = true },
@@ -76,7 +75,7 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
             AgregarTareaCommand = new Command(AgregarTarea);
             EliminarTareaCommand = new Command<Tarea>(EliminarTarea);
             EditarTareaCommand = new Command<Tarea>(EditarTarea);
-            ToggleImportanciaCommand = new Command<Tarea>(AlternarImportancia); // Nueva lógica para alternar la importancia
+            ImportanciaCommand = new Command<Tarea>(AlternarImportancia); // Nueva lógica para alternar la importancia
         }
 
         // Métodos para manejar cambios
@@ -187,12 +186,21 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         {
             if (tarea == null) return;
 
+            // Imprimir antes de cambiar la importancia
+            Debug.WriteLine($"Alternando importancia de la tarea: {tarea.NombreTarea}, Importancia: {tarea.Importancia}");
+
             // Cambiar el estado de importancia de la tarea
             tarea.Importancia = !tarea.Importancia;
 
-            // Después de cambiar la importancia, reclasificar la tarea
+            // Imprimir después de cambiar la importancia
+            Debug.WriteLine($"Nueva importancia de la tarea: {tarea.NombreTarea}, Importancia: {tarea.Importancia}");
+
+            // Actualizar la lista de tareas según la importancia
             ClasificarTarea(tarea);
 
+            // Asegurarse de que el cambio de color se refleje al actualizar las colecciones
+            OnPropertyChanged(nameof(TareasActivas));
+            OnPropertyChanged(nameof(TareasCompletadas));
         }
 
 

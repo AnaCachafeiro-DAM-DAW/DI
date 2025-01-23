@@ -6,53 +6,66 @@
              BackgroundColor="#333333">
 
     <ContentPage.Content>
-        <StackLayout Padding="20" Spacing="20">
+        <Grid RowDefinitions="*, Auto">
+            <!-- Auto para que el Footer sea ajustable -->
 
-            <!-- Lista de tareas Completadas -->
-            <CollectionView ItemsSource="{Binding TareasCompletadas}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame Padding="10" Margin="10,20" BackgroundColor="White" CornerRadius="10">
-                            <StackLayout Spacing="10">
+            <!-- Contenido Principal -->
+            <StackLayout Padding="20" Spacing="20" Grid.Row="0">
 
-                                <!-- Tarea con CheckBox -->
-                                <StackLayout Orientation="Horizontal">
-                                    <CheckBox IsChecked="{Binding EstaCompletada, Mode=TwoWay}"
-                                              CheckedChanged="OnCheckBoxCheckedChanged" />
-                                    <Label Text="Enviar a Activas"
-                                           VerticalOptions="Center"
-                                           FontSize="12"
-                                           TextColor="Gray" />
-                                </StackLayout>
-                                <!-- Nombre de la tarea -->
-                                <Label Text="{Binding NombreTarea}"
+                <!-- Lista de tareas Completadas -->
+                <CollectionView ItemsSource="{Binding TareasCompletadas}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame Padding="10" Margin="10,20" BackgroundColor="White" CornerRadius="10">
+                                <StackLayout Spacing="10">
+
+                                    <!-- Tarea con CheckBox -->
+                                    <StackLayout Orientation="Horizontal">
+                                        <CheckBox IsChecked="{Binding EstaCompletada, Mode=TwoWay}"
+                                                  CheckedChanged="OnCheckBoxCheckedChanged" />
+                                        <Label Text="Enviar a Activas"
+                                               VerticalOptions="Center"
+                                               FontSize="12"
+                                               TextColor="Gray" />
+                                    </StackLayout>
+                                    <!-- Nombre de la tarea -->
+                                    <Label Text="{Binding NombreTarea}"
                                             FontSize="22"
                                             TextColor="Black"
                                             FontAttributes="Bold"
                                             Margin="5,5,0,0" />
 
-                                <!-- Botón eliminar -->
-                                <Button Text="Eliminar"
-                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarTareaCommand}"
-                                        CommandParameter="{Binding .}"
-                                        BackgroundColor="Black"
-                                        TextColor="White"
-                                        CornerRadius="12"
-                                        FontAttributes="Bold" />
-                            </StackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                                    <!-- Botón eliminar -->
+                                    <Button Text="Eliminar"
+                                            Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.EliminarTareaCommand}"
+                                            CommandParameter="{Binding .}"
+                                            BackgroundColor="Black"
+                                            TextColor="White"
+                                            CornerRadius="12"
+                                            FontAttributes="Bold" />
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
-            <!-- Botón Volver -->
-            <Button Text="Volver"
-                    Command="{Binding OnVolverClicked}" 
-                    BackgroundColor="Gray"
-                    TextColor="White"
-                    CornerRadius="12"
-                    FontAttributes="Bold"
-                    HorizontalOptions="Center" />
-        </StackLayout>
+                <!-- Botón Volver -->
+                <Button Text="Volver"
+                        Command="{Binding CancelarCommand}"
+                        BackgroundColor="Gray"
+                        TextColor="White"
+                        CornerRadius="12"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center" />
+            </StackLayout>
+
+            <!-- FOOTER -->
+            <Grid BackgroundColor="#444444" Padding="10" Grid.Row="1">
+                <Label Text="© 2025 · Aplicación de Tareas"
+                       FontSize="14"
+                       HorizontalOptions="Center"
+                       TextColor="White"/>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

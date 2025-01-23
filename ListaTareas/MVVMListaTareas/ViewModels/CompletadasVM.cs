@@ -1,7 +1,7 @@
-﻿using ListaTareas.MVVMListaTareas.ViewModels;
+﻿using ListaTareas;
 using ListaTareas.MVVMListaTareas.Models;
+using ListaTareas.MVVMListaTareas.ViewModels;
 using System.Collections.ObjectModel;
-using ListaTareas;
 using System.Windows.Input;
 
 //[QueryProperty(nameof(NombreTarea), "NombreTarea")]
@@ -53,7 +53,15 @@ public class CompletadasVM : LogicaCambios
 
         // Inicialización del comando Cancelar
         // shell.current indica que debe regresar a la pantalla anterior
-        CancelarCommand = new Command(async () => await Shell.Current.GoToAsync(".."));
+        CancelarCommand = new Command(async () =>
+        {
+            Console.WriteLine("Ejecutando CancelarCommand");
+            await Shell.Current.GoToAsync("//Lista");
+            // Navega hacia la página anterior en el stack de Shell
+            //..: Navega hacia atrás en el stack de navegación. Esto funciona si llegaste a Completadas desde Lista.
+            //Lista: Navega directamente a la página Lista, reiniciando el stack de navegación si es necesario.
+        });
+
     }
 
     // este método SincronizarConGlobal mantendrá ambas listas sincronizadas
