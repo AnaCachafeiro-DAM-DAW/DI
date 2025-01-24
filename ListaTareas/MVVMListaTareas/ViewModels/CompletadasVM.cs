@@ -4,9 +4,6 @@ using ListaTareas.MVVMListaTareas.ViewModels;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-//[QueryProperty(nameof(NombreTarea), "NombreTarea")]
-//[QueryProperty(nameof(EstaCompletada), "EstaCompletada")]
-//[QueryProperty(nameof(Importancia), "Importancia")]
 
 public class CompletadasVM : LogicaCambios
 {

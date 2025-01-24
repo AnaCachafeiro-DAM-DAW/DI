@@ -3,6 +3,8 @@
        xmlns:views="clr-namespace:ListaTareas.MVVMListaTareas.Views"
        x:Class="ListaTareas.AppShell">
 
+
+    <!-- Hamburguesa -->
     <!-- Página principal -->
     <ShellContent Title="Lista Tareas" ContentTemplate="{DataTemplate views:Lista}" Route="Lista" />
 

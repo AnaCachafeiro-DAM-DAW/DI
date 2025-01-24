@@ -7,7 +7,6 @@
 
     <ContentPage.Content>
         <Grid RowDefinitions="*, Auto">
-            <!-- Define dos filas: contenido y footer -->
 
             <!-- Contenido Principal -->
             <StackLayout Padding="20" Spacing="20" Grid.Row="0">
