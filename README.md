@@ -1,11 +1,5 @@
 #DI
-
 // PRÁCTICA ENTREGABLE: APP DE LISTA DE TAREAS 
-/**
-/ Ana Cachafeiro · DI 2024/2025 
-/
-*/
-
   1. Objetivos
 Desarrollar una aplicación multiplataforma de lista de tareas (To-Do List) que permita
 a los usuarios agregar, editar y eliminar tareas. La práctica está diseñada para que los
