@@ -1,2 +1,0 @@
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-AnaCachafeiro_APPLISTATAREAS_2025.mp4 filter=lfs diff=lfs merge=lfs -text
