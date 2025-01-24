@@ -1,88 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\views\\lista.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\views\\lista.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\views\\detalletarea.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\views\\detalletarea.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\views\\completadas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\views\\completadas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 189,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AppShell.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\AppShell.xaml.cs",
-              "RelativeDocumentMoniker": "ListaTareas\\AppShell.xaml.cs",
-              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\AppShell.xaml.cs",
-              "RelativeToolTip": "ListaTareas\\AppShell.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T16:12:19.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Lista.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\Lista.xaml.cs",
-              "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\Views\\Lista.xaml.cs",
-              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\Lista.xaml.cs",
-              "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\Views\\Lista.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T16:12:12.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DetalleTarea.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\DetalleTarea.xaml.cs",
-              "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\Views\\DetalleTarea.xaml.cs",
-              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\DetalleTarea.xaml.cs",
-              "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\Views\\DetalleTarea.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T16:12:09.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Completadas.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml.cs",
-              "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml.cs",
-              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml.cs",
-              "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-24T16:12:05.806Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

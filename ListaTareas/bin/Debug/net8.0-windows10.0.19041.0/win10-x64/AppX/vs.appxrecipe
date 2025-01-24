@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-23T20:56:39.036</Modified>
+      <Modified>2025-01-24T16:37:57.713</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-01-23T20:37:07.218</Modified>
+      <Modified>2025-01-24T16:37:57.228</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ListaTareas.runtimeconfig.json">
       <PackagePath>ListaTareas.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ListaTareas.dll">
       <PackagePath>ListaTareas.dll</PackagePath>
-      <Modified>2025-01-23T20:56:38.714</Modified>
+      <Modified>2025-01-24T16:37:54.726</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>ListaTareas.exe</PackagePath>
-      <Modified>2025-01-23T20:56:38.721</Modified>
+      <Modified>2025-01-24T16:37:54.828</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -288,7 +288,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\ListaTareas.deps.json">
       <PackagePath>ListaTareas.deps.json</PackagePath>
-      <Modified>2025-01-23T20:37:07.023</Modified>
+      <Modified>2025-01-24T16:37:56.812</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Ana\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.57\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
