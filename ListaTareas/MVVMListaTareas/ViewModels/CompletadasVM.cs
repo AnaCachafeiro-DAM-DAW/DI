@@ -63,9 +63,10 @@ public class CompletadasVM : LogicaCambios
         });
 
     }
+    
 
-    // este método SincronizarConGlobal mantendrá ambas listas sincronizadas
-    private void SincronizarConGlobal()
+// este método SincronizarConGlobal mantendrá ambas listas sincronizadas
+private void SincronizarConGlobal()
     {
         TareasCompletadas.Clear();
         foreach (var tarea in AppShell.Logica.TareasCompletadas)

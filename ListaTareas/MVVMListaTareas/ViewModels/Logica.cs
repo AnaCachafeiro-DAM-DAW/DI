@@ -241,8 +241,9 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
             // Notificar cambios en las colecciones
             OnPropertyChanged(nameof(TareasActivas));
             OnPropertyChanged(nameof(TareasCompletadas));
-        }
 
+
+        }
     }
 
 }

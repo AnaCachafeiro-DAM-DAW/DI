@@ -64,8 +64,5 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
             });
         }
 
-        public DetalleTareaVM()
-        {
-        }
     }
 }
