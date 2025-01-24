@@ -51,17 +51,6 @@ public class CompletadasVM : LogicaCambios
             SincronizarConGlobal();
         };
 
-        // Inicialización del comando Cancelar
-        // shell.current indica que debe regresar a la pantalla anterior
-        CancelarCommand = new Command(async () =>
-        {
-            Console.WriteLine("Ejecutando CancelarCommand");
-            await Shell.Current.GoToAsync("//Lista");
-            // Navega hacia la página anterior en el stack de Shell
-            //..: Navega hacia atrás en el stack de navegación. Esto funciona si llegaste a Completadas desde Lista.
-            //Lista: Navega directamente a la página Lista, reiniciando el stack de navegación si es necesario.
-        });
-
     }
     
 

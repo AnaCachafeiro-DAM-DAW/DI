@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\models\\tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\models\\tarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\views\\completadas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\views\\completadas.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\views\\completadas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\views\\completadas.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\viewmodels\\logica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\viewmodels\\logica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\viewmodels\\completadasvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\viewmodels\\completadasvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|c:\\users\\ana\\source\\repos\\tarea1_listatareas\\listatareas\\mvvmlistatareas\\viewmodels\\detalletareavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3DACEA82-3CB0-4C2C-B0AE-989296E27C1E}|ListaTareas\\ListaTareas.csproj|solutionrelative:listatareas\\mvvmlistatareas\\viewmodels\\detalletareavm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +26,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 189,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Tarea.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Models\\Tarea.cs",
-              "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\Models\\Tarea.cs",
-              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Models\\Tarea.cs",
-              "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\Models\\Tarea.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T23:54:18.365Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Logica.cs",
               "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\ViewModels\\Logica.cs",
               "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\ViewModels\\Logica.cs",
               "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\ViewModels\\Logica.cs",
               "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\ViewModels\\Logica.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAA7wPUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAYwFYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-23T20:40:46.241Z"
+              "WhenOpened": "2025-01-23T20:40:46.241Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CompletadasVM.cs",
-              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\ViewModels\\CompletadasVM.cs",
-              "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\ViewModels\\CompletadasVM.cs",
-              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\ViewModels\\CompletadasVM.cs",
-              "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\ViewModels\\CompletadasVM.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADoAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Completadas.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml.cs",
+              "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml.cs",
+              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml.cs",
+              "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T23:37:03.775Z"
+              "WhenOpened": "2025-01-24T16:08:53.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Completadas.xaml",
+              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml",
+              "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml",
+              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml",
+              "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\Views\\Completadas.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-24T16:08:52.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DetalleTareaVM.cs",
+              "DocumentMoniker": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\ViewModels\\DetalleTareaVM.cs",
+              "RelativeDocumentMoniker": "ListaTareas\\MVVMListaTareas\\ViewModels\\DetalleTareaVM.cs",
+              "ToolTip": "C:\\Users\\Ana\\source\\repos\\Tarea1_ListaTareas\\ListaTareas\\MVVMListaTareas\\ViewModels\\DetalleTareaVM.cs",
+              "RelativeToolTip": "ListaTareas\\MVVMListaTareas\\ViewModels\\DetalleTareaVM.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAswCIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-24T15:31:06.513Z",
+              "EditorCaption": ""
             }
           ]
         }

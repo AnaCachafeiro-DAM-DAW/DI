@@ -1,5 +1,6 @@
 ﻿using ListaTareas.MVVMListaTareas.Models;
 using ListaTareas.MVVMListaTareas.Views;
+using Microsoft.Maui.Controls;
 using System.Collections.ObjectModel; // Cambiado a ObservableCollection
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -34,6 +35,9 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
         public ICommand EliminarTareaCommand { get; } // en lista y completadas
         public ICommand EditarTareaCommand { get; } // en detalle
         public ICommand ImportanciaCommand { get; }  // lista
+        public ICommand CancelarCommand { get; } // botón cancelar de volver en completadas
+
+       
 
         public Logica()
         {
@@ -76,6 +80,17 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
             EliminarTareaCommand = new Command<Tarea>(EliminarTarea);
             EditarTareaCommand = new Command<Tarea>(EditarTarea);
             ImportanciaCommand = new Command<Tarea>(AlternarImportancia); // Nueva lógica para alternar la importancia
+
+            // Inicialización del comando Cancelar
+            // shell.current indica que debe regresar a la pantalla anterior
+            CancelarCommand = new Command(async () =>
+            {
+                await Shell.Current.GoToAsync("//Lista");
+                // Navega hacia la página anterior en el stack de Shell
+                //..: Navega hacia atrás en el stack de navegación. Esto funciona si llegaste a Completadas desde Lista.
+                //Lista: Navega directamente a la página Lista, reiniciando el stack de navegación si es necesario.
+            });
+
         }
 
         // Métodos para manejar cambios
@@ -244,7 +259,9 @@ namespace ListaTareas.MVVMListaTareas.ViewModels
 
 
         }
+
     }
+     
 
 }
 

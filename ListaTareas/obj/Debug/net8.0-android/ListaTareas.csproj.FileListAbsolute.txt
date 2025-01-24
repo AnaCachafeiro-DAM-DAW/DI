@@ -1044,3 +1044,10 @@ C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-androi
 C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-android\stamp\_GenerateJavaStubs.stamp
 C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-android\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-android\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\bin\Debug\net8.0-android\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\bin\Debug\net8.0-android\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\bin\Debug\net8.0-android\Microsoft.VisualStudio.DesignTools.TapContract.dll
+C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-android\ListaTar.158E19FA.Up2Date
+C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-android\android\assets\Microsoft.Maui.Controls.HotReload.Forms.dll
+C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-android\android\assets\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
+C:\Users\Ana\source\repos\Tarea1_ListaTareas\ListaTareas\obj\Debug\net8.0-android\android\assets\Microsoft.VisualStudio.DesignTools.TapContract.dll
